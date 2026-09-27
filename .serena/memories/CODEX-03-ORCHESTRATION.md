@@ -10,7 +10,7 @@ Area: CODEX
 Orchestrator/worker flow and deployment model (ADR 0014).
 
 - Threads: `codex_app.*` (app) / `codex_tui.*` (TUI) dynamic namespace.
-  Verified pin surface `be2951ea`: list_threads, list_archived_threads,
+  Verified pin surface `ac0e23e5`: list_threads, list_archived_threads,
   read_thread, wait_threads (≤8, ≤120 s, 0=snapshot),
   send_message_to_thread, create_thread, fork_thread, set_thread_title,
   set_thread_archived. NO handoff_thread / set_thread_pinned.

@@ -9,7 +9,7 @@ Area: CORE
 
 ## Purpose
 
-Index durable knowledge for the Codex 0.155.1 team setup repository. No application code.
+Index durable knowledge for the Codex 0.157.1 team setup repository. No application code.
 
 ## Source Of Truth
 
@@ -43,7 +43,7 @@ Author remote is `NDDev-OpenNetwork/hack-setup`. Later working remote is `BAITC-
 
 ## Invariants
 
-- Codex CLI pin is `0.155.1` / `rust-v0.155.1`.
+- Codex CLI pin is `0.157.1` / `rust-v0.157.1`.
 - Root entry is `./setup`, not a file named `install`.
 - Project commands are `just`. Do not add a Makefile.
 - Repo skill names do not collide with either plugin skill set.

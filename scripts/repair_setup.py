@@ -50,7 +50,7 @@ def load_json(path: Path) -> dict:
 
 
 def pinned_version() -> str:
-    return str(load_json(PIN_PATH).get("version", "0.155.1"))
+    return str(load_json(PIN_PATH).get("version", "0.157.1"))
 
 
 def marketplace_names() -> list[str]:
@@ -230,7 +230,7 @@ HOOK_EVENT_LABELS = {
 
 def _hook_hash(event_label: str, matcher: str | None, handler: dict) -> str:
     """Port of codex-rs hooks::engine::discovery::hook_hash +
-    config::fingerprint::version_for_toml (0.155.1, be2951ea):
+    config::fingerprint::version_for_toml (0.157.1, ac0e23e5):
     sha256 over the canonical JSON of the NORMALIZED identity —
     platform-resolved command (commandWindows never reaches the hash),
     normalized timeout (SessionEnd/Interrupt: default 1s, clamp 1-3;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Codex 0.155.1 project artifacts. Python 3.11+. No third-party deps."""
+"""Validate Codex 0.157.1 project artifacts. Python 3.11+. No third-party deps."""
 
 from __future__ import annotations
 
@@ -178,23 +178,23 @@ def check_pin() -> str:
     if not isinstance(pin, dict):
         raise CheckError("build/codex-pin.json must be an object")
     version = pin.get("codex_cli")
-    if version != "0.155.1":
-        raise CheckError(f"codex_cli pin must be 0.155.1, got {version!r}")
-    if pin.get("release_tag") != "rust-v0.155.1":
-        raise CheckError("release_tag must be rust-v0.155.1")
+    if version != "0.157.1":
+        raise CheckError(f"codex_cli pin must be 0.157.1, got {version!r}")
+    if pin.get("release_tag") != "rust-v0.157.1":
+        raise CheckError("release_tag must be rust-v0.157.1")
     installer = pin.get("installer")
     if not isinstance(installer, dict):
         raise CheckError("pin installer must be an object")
     url = installer.get("url")
-    if not isinstance(url, str) or "rust-v0.155.1/install.sh" not in url:
-        raise CheckError("pin installer.url must be the rust-v0.155.1 install.sh")
+    if not isinstance(url, str) or "rust-v0.157.1/install.sh" not in url:
+        raise CheckError("pin installer.url must be the rust-v0.157.1 install.sh")
     require_sha256("pin installer.sha256", installer.get("sha256"))
     installer_ps1 = pin.get("installer_ps1")
     if not isinstance(installer_ps1, dict):
         raise CheckError("pin installer_ps1 must be an object")
     ps1_url = installer_ps1.get("url")
-    if not isinstance(ps1_url, str) or "rust-v0.155.1/install.ps1" not in ps1_url:
-        raise CheckError("pin installer_ps1.url must be the rust-v0.155.1 install.ps1")
+    if not isinstance(ps1_url, str) or "rust-v0.157.1/install.ps1" not in ps1_url:
+        raise CheckError("pin installer_ps1.url must be the rust-v0.157.1 install.ps1")
     require_sha256("pin installer_ps1.sha256", installer_ps1.get("sha256"))
     packages = pin.get("packages")
     if not isinstance(packages, dict):
@@ -771,8 +771,8 @@ def check_agents_md() -> None:
     size = len(text.encode("utf-8"))
     if size > 32768:
         raise CheckError(f"AGENTS.md is {size} bytes; Codex default cap is 32 KiB")
-    if "0.155.1" not in text:
-        raise CheckError("AGENTS.md must name the 0.155.1 pin")
+    if "0.157.1" not in text:
+        raise CheckError("AGENTS.md must name the 0.157.1 pin")
     if "gpt-6-astra" not in text or "gpt-5.6-sol" not in text:
         raise CheckError("AGENTS.md must name gpt-6-astra and gpt-5.6-sol")
     if "Do not spawn Codex subagents" not in text:
@@ -868,7 +868,7 @@ def check_config() -> None:
         raise CheckError("do not set max_concurrent_threads_per_session while agents are off")
     if "profiles" in config:
         raise CheckError(
-            "project config must not define [profiles]; Codex 0.155.1 "
+            "project config must not define [profiles]; Codex 0.157.1 "
             "ignores project-local profiles. The sol profile is installed "
             "into the user config by install/modules/20-codex-cli"
         )
@@ -1214,7 +1214,7 @@ def check_hooks() -> None:
         raise CheckError(
             f"registered.hooks.scripts unused: {sorted(scripts - seen_scripts)}"
         )
-    # 0.155.1 names the exec tool `exec_command` for PreToolUse (tool_input
+    # 0.157.1 names the exec tool `exec_command` for PreToolUse (tool_input
     # carries `cmd`); `Bash` is only the PostToolUse normalization. A matcher
     # without `exec_command` never fires on shell calls — dead guard.
     for tool_event in ("PreToolUse", "PostToolUse"):
@@ -1226,7 +1226,7 @@ def check_hooks() -> None:
         ):
             raise CheckError(
                 f"hooks.{tool_event} matcher must cover exec_command "
-                f"(0.155.1 exec tool name); got {matchers}"
+                f"(0.157.1 exec tool name); got {matchers}"
             )
     if "SubagentStart" in events or "SubagentStop" in events:
         raise CheckError(
@@ -1291,7 +1291,7 @@ def main() -> int:
         for error in errors:
             print(f"FAIL {error}", file=sys.stderr)
         return 1
-    print("PASS Codex 0.155.1 project artifacts")
+    print("PASS Codex 0.157.1 project artifacts")
     return 0
 
 

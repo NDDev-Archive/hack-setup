@@ -22,7 +22,7 @@ config together, then `just check`.
 
 ## Current law (from the pin)
 
-- CLI `0.155.1` / `rust-v0.155.1` / `be2951ea…`
+- CLI `0.157.1` / `rust-v0.157.1` / `ac0e23e5…`
 - Session: `never` + `danger-full-access` + `web_search=live` (ADR 0006)
 - Models: `gpt-6-astra` + `gpt-5.6-sol`, both `xhigh`. In-repo sol =
   `/review` or `codex -m gpt-5.6-sol` (project `model` outranks profile
@@ -100,7 +100,7 @@ Setup owner stream: Danil.
   in codex-pin (`f45c273b…`) + node/bun zips, `installer_ps1` pins for
   codex (`ab832ca3…`) and uv (`e08cfe98…`); checker requires the ps1
   twins + `entry_windows`; CI `setup-e2e-windows` (windows-latest) is
-  GREEN — codex-cli 0.155.1, all 5 plugins installed/enabled, both
+  GREEN — codex-cli 0.157.1, all 5 plugins installed/enabled, both
   checkers PASS, all 5 required probes OK on a real Windows host. WSL2
   remains an optional POSIX path; Windows arm64 fail-closed.
   Strict-mode `.Count` scalar bug fixed via `@(...)` wrap.
@@ -149,7 +149,7 @@ Setup owner stream: Danil.
   hackathon section + `.agent/briefs/` gitignored. Local clone at
   `~/Developer/NDDev-OpenNetwork/vibestrap`. BAITC repo untouched
   until hackathon day.
-- codex_app schema verified against pinned `be2951ea` source
+- codex_app schema verified against pinned `ac0e23e5` source
   (`tui/src/dynamic_tools.rs`): 9 tools — list_threads,
   list_archived_threads, read_thread, wait_threads (≤8 targets, ≤120 s,
   0=snapshot), send_message_to_thread, create_thread, fork_thread,
@@ -177,7 +177,7 @@ Setup owner stream: Danil.
   host-owned: module 20 writes a managed `# hack-setup:` block into
   `~/.codex/config.toml` → `install/notify.sh`/`notify.ps1` toast on
   agent-turn-complete (scrubber now also strips `# hack-setup` inline
-  lines). No custom slash commands in 0.155.1 — `/worktree` `/fork`
+  lines). No custom slash commands in 0.157.1 — `/worktree` `/fork`
   `/app` are the manual paths.
 - `Interrupt` is the 6th hook event — same ndjson log as SessionEnd.
   SessionEnd/Interrupt timeout caps at 3 s (clamped otherwise).
@@ -237,7 +237,7 @@ Landed this pass:
   builds retry next tick; bounded healthcheck (12×5s), die on fail.
 - bootstrap PATH before modules; module 40 runs full repair;
   module.ps1 delegates to repair + exit codes.
-- context7 keyless-by-default (0.155.1 hard-errors on unset env var).
+- context7 keyless-by-default (0.157.1 hard-errors on unset env var).
 - Serena pinned to python_ty. Workflow: worktree-first orchestrator
   spawn + retirement contract, verify-agent role, merge beacons,
   per-domain serena memories.
