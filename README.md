@@ -1,6 +1,6 @@
 # hack-setup
 
-Shared Codex `0.155.1` setup for a three-person team that will later work in
+Shared Codex `0.157.1` setup for a three-person team that will later work in
 one private repo: `BAITC-Hacks/hack-a58598e0-saint-tibo`.
 
 This public staging repo holds the project surfaces, the installer catalog,
@@ -66,7 +66,7 @@ shims; Windows additionally exposes `%LOCALAPPDATA%\Programs\OpenAI\Codex\bin`.
 
 | File | Role |
 | --- | --- |
-| `build/codex-pin.json` | Codex CLI `0.155.1` + official installer hashes |
+| `build/codex-pin.json` | Codex CLI `0.157.1` + official installer hashes |
 | `build/stack-pin.json` | Product stack schema 2. `control` names the loop |
 | `.codex/config.toml` | Runtime projection of session + models + features |
 | `build/stack-standard.md` | Generated; refresh with `--write` |
@@ -76,7 +76,7 @@ shims; Windows additionally exposes `%LOCALAPPDATA%\Programs\OpenAI\Codex\bin`.
 | `plugins/hack-agent-standards/standards/` | On-demand frames. `docs/research/` is archive |
 
 ```bash
-codex --version     # expected: codex-cli 0.155.1
+codex --version     # expected: codex-cli 0.157.1
 just check          # artifact validator + host doctor
 just live           # real Serena MCP proof (handshake/symbol/memory)
 just repair         # diagnose + auto-fix safe drift (plugin cache, user config)

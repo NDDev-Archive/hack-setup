@@ -105,9 +105,9 @@ Playbooks: `$hack-agent-workflow:delegate-worker`,
 
 ## Pin
 
-- Codex CLI `0.155.1` (`rust-v0.155.1`, commit
-  `be2951ea34f0d295ed0becf97079f92fa5f6950e`). `codex --version` prints
-  `codex-cli 0.155.1`. Installer hashes live in `build/codex-pin.json`.
+- Codex CLI `0.157.1` (`rust-v0.157.1`, commit
+  `ac0e23e5232692b95268583c8278c50b8c436d2b`). `codex --version` prints
+  `codex-cli 0.157.1`. Installer hashes live in `build/codex-pin.json`.
 - Stack versions: `build/stack-pin.json` schema 2. Re-verify on
   hackathon day with `just reverify`. `docs/research/` is archive, not
   law.
@@ -181,7 +181,7 @@ keenable (HTTP, keyless by default; keys travel as env-var names only).
 - `UserPromptSubmit` adds the reminder + `STATUS` line (repo, branch,
   dirty count, last commit, `@me` issues via a 60 s gh cache).
 - `PreToolUse` `Bash|exec_command|write_stdin|shell` is the lane guard
-  described above — 0.155.1 names the exec tool `exec_command` and sends
+  described above — 0.157.1 names the exec tool `exec_command` and sends
   `tool_input.cmd`; `write_stdin` is covered so a typed `git push` into a
   persistent shell is denied too. `command` argv-list shapes are also
   handled.
@@ -213,12 +213,12 @@ issues/branch/worktree/lane/`hack:` markers across compaction;
 `check_for_update_on_startup = false` (the CLI is pinned). `notify` is
 host-owned: module 20 writes a managed block into
 `~/.codex/config.toml` → `install/notify.sh` / `notify.ps1` toast on
-turn complete. Custom slash commands do not exist in 0.155.1;
-`/worktree`, `/fork`, `/app` cover the manual paths.
+turn complete. Built-in slash commands cover the manual paths:
+`/worktree`, `/fork`, `/app`.
 
 ## Technology rules
 
-Codex 0.155.1 has no glob / `.mdc` / `alwaysApply` loader. The
+Codex 0.157.1 has no glob / `.mdc` / `alwaysApply` loader. The
 catalogue stays out of this file by design.
 
 1. Read `plugins/hack-agent-standards/standards/INDEX.md`.
@@ -252,7 +252,7 @@ change that creates the tree.
 | Notify | `install/notify.sh` / `notify.ps1` | Turn-complete toast, wired into user config by module 20. |
 | Project config | `.codex/config.toml` | Projection of the pin; loads after trust. |
 | Bootstrap | `./setup` / `.\setup.ps1` → `install/` | macOS/Linux + native Windows modules. Discovery: `install/modules/<nn>-*`. |
-| Codex pin | `build/codex-pin.json` | CLI `0.155.1` + official installer hashes. |
+| Codex pin | `build/codex-pin.json` | CLI `0.157.1` + official installer hashes. |
 | Stack pin | `build/stack-pin.json` | Schema 2. Generated table: `build/stack-standard.md`. |
 | Commands | `justfile` | `just gate` / `just check` / `just repair`. |
 | Devin twin | `devin-setup/` | Self-contained Devin CLI setup (devin `3000.11.1` + herdr `0.9.1`, herdr-pane orchestration). Its own `AGENTS.md` rules inside. |
