@@ -3,7 +3,7 @@
 One command after clone:
 
 ```sh
-git clone git@github.com:NDDev-OpenNetwork/hack-setup.git
+git clone git@github.com:NDDev-Archive/hack-setup.git
 cd hack-setup
 ./setup
 . install/env.sh

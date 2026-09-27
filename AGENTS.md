@@ -7,7 +7,7 @@ workflow, and the standards. Everything below is either law (from
 `build/`) or a pointer to where the law lives.
 
 This repository carries toolchain and instructions. Product code lives
-in the product repo (`NDDev-OpenNetwork/vibestrap` skeleton, later the
+in the product repo (`NDDev-Archive/vibestrap` skeleton, later the
 hackathon repo `BAITC-Hacks/hack-a58598e0-saint-tibo` — its first push
 happens on hackathon day, on the owner's word).
 
@@ -313,7 +313,7 @@ the toolchain refuses outright:
 ## Bootstrap
 
 ```bash
-git clone git@github.com:NDDev-OpenNetwork/hack-setup.git
+git clone git@github.com:NDDev-Archive/hack-setup.git
 cd hack-setup
 ./setup --member <danil|ivan|artem>          # macOS / Ubuntu / WSL2
 .\setup.ps1 --member <danil|ivan|artem>     # native Windows x86_64

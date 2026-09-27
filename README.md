@@ -15,7 +15,7 @@ Windows x86_64 **natively** (ADR 0012; WSL2 also works as a POSIX path).
 macOS / Linux / WSL:
 
 ```bash
-git clone git@github.com:NDDev-OpenNetwork/hack-setup.git
+git clone git@github.com:NDDev-Archive/hack-setup.git
 cd hack-setup
 ./setup --member <danil|ivan|artem>
 . install/env.sh
@@ -24,7 +24,7 @@ cd hack-setup
 Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/NDDev-OpenNetwork/hack-setup.git
+git clone https://github.com/NDDev-Archive/hack-setup.git
 cd hack-setup
 powershell -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1 --member <danil|ivan|artem>
 . .\install\env.ps1
